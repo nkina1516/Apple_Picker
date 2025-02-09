@@ -19,11 +19,13 @@ public class AppleTree : MonoBehaviour
     public float        changeDirChance = 0.1f;
     // Seconds between Apples instantiations
     public float        appleDropDelay = 1f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Start dropping apples                                          
         Invoke( "DropApple", 2f );
+
     }
 
     void DropApple() {                                                    

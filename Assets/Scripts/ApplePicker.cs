@@ -11,6 +11,7 @@ public class ApplePicker : MonoBehaviour
     public float       basketBottomY  = -14f;
     public float       basketSpacingY = 2f;
     public List<GameObject> basketList;
+    public Round_Number roundNumber;
    
 
 
@@ -28,6 +29,9 @@ public class ApplePicker : MonoBehaviour
             tBasketGO.transform.position = pos;
             basketList.Add( tBasketGO );
         }
+
+        GameObject scoreGO = GameObject.Find( "Round_Number" );
+        roundNumber = scoreGO.GetComponent<Round_Number>();
 
 
     }
@@ -49,11 +53,11 @@ public class ApplePicker : MonoBehaviour
         basketList.RemoveAt( basketIndex );
         Destroy( basketGO );
 
-      
+        roundNumber.round += 1;
 
         // If there are no Baskets left, restart the game 
         if ( basketList.Count == 0 ) {
-             SceneManager.LoadScene( "_Scene_0" );                       
+             SceneManager.LoadScene( "Game_Over" );                       
         }
     }
     
