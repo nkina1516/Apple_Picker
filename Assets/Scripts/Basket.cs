@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-      public ScoreCounter scoreCounter;  
+      public ScoreCounter scoreCounter; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

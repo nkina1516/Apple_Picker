@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 public class ApplePicker : MonoBehaviour
 {
     [Header("Inscribed")]
@@ -9,7 +10,8 @@ public class ApplePicker : MonoBehaviour
     public int         numBaskets     = 4;
     public float       basketBottomY  = -14f;
     public float       basketSpacingY = 2f;
-    public List<GameObject> basketList; 
+    public List<GameObject> basketList;
+   
 
 
 
@@ -26,6 +28,8 @@ public class ApplePicker : MonoBehaviour
             tBasketGO.transform.position = pos;
             basketList.Add( tBasketGO );
         }
+
+
     }
 
     public void AppleMissed() {                                                
@@ -44,6 +48,8 @@ public class ApplePicker : MonoBehaviour
         // Remove the Basket from the list and destroy the GameObject
         basketList.RemoveAt( basketIndex );
         Destroy( basketGO );
+
+      
 
         // If there are no Baskets left, restart the game 
         if ( basketList.Count == 0 ) {
