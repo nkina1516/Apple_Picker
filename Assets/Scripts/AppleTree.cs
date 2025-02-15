@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class AppleTree : MonoBehaviour
@@ -22,10 +23,11 @@ public class AppleTree : MonoBehaviour
     public float branchDropDelay = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    async Task Start()
     {
         // Start dropping apples                                          
         Invoke( "DropApple", 2f );
+        await Task.Delay(200);
         Invoke ( "DropBranch", 6f );
     }
 
